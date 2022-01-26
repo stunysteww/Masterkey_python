@@ -1,11 +1,16 @@
 import subprocess
 import re
+from tracemalloc import stop
 #Masterkey
 Masterkey= "shashankcodes"
 #Asking for Masterkey
-EnterMasterKey = input("Enter your Masterkey")
+EnterMasterKey = input("Enter your Masterkey: ")
 #Veryfing whther the user has entered the correct Masterkey or not
-if EnterMasterKey == Masterkey:
+if EnterMasterKey != Masterkey:
+    print("That was the wrong masterkey")
+    quit()
+   
+elif EnterMasterKey == Masterkey:
     print("Yup that was the correct masterkey")
     print("And these are your wifi passwords")
 
@@ -30,5 +35,7 @@ if len(profile_names) != 0:
 
             for x in range(len(wifi_list)):
                 print(wifi_list[x]) 
-                print("Thanks for using this program. If you liked it please support me on https://www.buymeacoffee.com/shashankstew")
+               
+
+print("Thanks for using this program. If you liked it please support me on https://www.buymeacoffee.com/shashankstew")
 
